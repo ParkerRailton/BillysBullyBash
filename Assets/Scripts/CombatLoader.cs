@@ -7,8 +7,8 @@ public class CombatLoader : MonoBehaviour
     [SerializeField]
     Button triggerButton;
 
-    [SerializeField]
-    Collider2D triggerCollider;
+
+    Collider2D tc;
 
     [SerializeField]
     List<Enemy> enemies;
@@ -20,9 +20,11 @@ public class CombatLoader : MonoBehaviour
             triggerButton.onClick.AddListener(loadCombat);
         }
 
-        if (triggerCollider != null)
+        tc = GetComponent<Collider2D>();
+
+        if (tc != null)
         {
-            triggerCollider.isTrigger = true;
+            tc.isTrigger = true;
         }
     }
 
