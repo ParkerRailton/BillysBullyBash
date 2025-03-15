@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestLoaderScene.unity
     guid: 57d9bf6307d93d54db646cfa53fb4edb
   - enabled: 1
-    path: Assets/Scenes/CombatScene.unity
-    guid: 7cb286b2282c03b46bc8423726ced1b4
-  - enabled: 1
     path: Assets/Scenes/TutorialLevel.unity
     guid: 3f8be3e743c27d0489ad270dfb172b89
+  - enabled: 1
+    path: Assets/Scenes/CombatScene.unity
+    guid: 7cb286b2282c03b46bc8423726ced1b4
   m_configObjects: {}
