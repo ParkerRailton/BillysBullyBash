@@ -7,22 +7,29 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeed = 3.5f;
     public float jumpStrength = 20f;
     float horizontalValue;
-
+    private Animator anim;
     private bool isGrounded = true;
 
     Rigidbody2D rb;
     // Start is called before the first frame update
     SpriteRenderer sr;
+
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-    }
+        anim = GetComponent<Animator>();//make reference to the animator which is on this gameObject with the script. 
+    
+
+}
 
     // Update is called once per frame
     void Update()
     {
         horizontalValue = Input.GetAxisRaw("Horizontal");
+        bool myBool = anim.GetBool("walking"); // this will fetch what bool is in the walking parameter. 
+        anim.SetBool("walking", false);//this will set the bool parameter "walking" to false. 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
@@ -39,6 +46,7 @@ public class PlayerMove : MonoBehaviour
         else if (dir < 0) sr.flipX = true;
         Vector2 targetVelocity = new Vector2(dir * moveSpeed, rb.velocity.y);
         rb.velocity = targetVelocity;
+        
     }
 
     void Jump()
@@ -48,6 +56,7 @@ public class PlayerMove : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
            // isGrounded = false;
         }
+  
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -57,4 +66,6 @@ public class PlayerMove : MonoBehaviour
             isGrounded = true;
         }
     }
+
 }
+
