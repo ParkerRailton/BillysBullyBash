@@ -1,6 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public enum PlayerState {
+    IDLE = 0,
+WALKING = 1,
+JUMPING =2
+}
 
 public class PlayerMove : MonoBehaviour
 {
@@ -9,6 +16,7 @@ public class PlayerMove : MonoBehaviour
     float horizontalValue;
     private Animator anim;
     private bool isGrounded = true;
+    public PlayerState state = PlayerState.IDLE;
 
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -20,25 +28,26 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();//make reference to the animator which is on this gameObject with the script. 
-    
 
-}
+
+    }
 
     // Update is called once per frame
     void Update()
     {
         horizontalValue = Input.GetAxisRaw("Horizontal");
-        bool myBool = anim.GetBool("walking"); // this will fetch what bool is in the walking parameter. 
-        anim.SetBool("walking", false);//this will set the bool parameter "walking" to false. 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (SceneManager.sceneCount == 1)
         {
-            Jump();
+            Move(horizontalValue);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
         }
+        DetermineState();
+
     }
-    void FixedUpdate()
-    {
-        Move(horizontalValue);
-    }
+
 
     void Move(float dir)
     {
@@ -46,7 +55,7 @@ public class PlayerMove : MonoBehaviour
         else if (dir < 0) sr.flipX = true;
         Vector2 targetVelocity = new Vector2(dir * moveSpeed, rb.velocity.y);
         rb.velocity = targetVelocity;
-        
+
     }
 
     void Jump()
@@ -54,18 +63,39 @@ public class PlayerMove : MonoBehaviour
         if (isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
-           // isGrounded = false;
+          //  isGrounded = false;
+          
         }
-  
+
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) 
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
+       // else
+       // {
+        //    isGrounded = false;
+       // }
     }
 
+    
+
+    void DetermineState()
+    {
+        state = PlayerState.IDLE;
+        if (horizontalValue != 0)
+        {
+            state = PlayerState.WALKING;
+        }
+        if (!isGrounded)
+        {
+             state = PlayerState.JUMPING;
+        }
+        anim.SetInteger("State", (int)state);
+    }
+  
 }
 
