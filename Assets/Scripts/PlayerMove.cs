@@ -63,22 +63,20 @@ public class PlayerMove : MonoBehaviour
         if (isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
-          //  isGrounded = false;
+            isGrounded = false;
           
         }
 
     }
 
-    private void OnCollisionEnter(Collision collision) 
+    private void OnCollisionEnter2D(Collision2D collision) 
     {
+        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
-       // else
-       // {
-        //    isGrounded = false;
-       // }
+       
     }
 
     
