@@ -18,6 +18,7 @@ public class FollowerMove : MonoBehaviour
     public float jumpBuffer = 1f;
     public float moveBuffer = 0.5f;
     private bool isGrounded = true;
+    private Animator anim;
     public float slowdownRange = 1f;
     private float horizontalValue;
     public FollowerState state = FollowerState.IDLE;
@@ -36,6 +37,7 @@ public class FollowerMove : MonoBehaviour
         jumpStrength = masterMove.jumpStrength;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();//make reference to the animator which is on this gameObject with the script.
         followPoint = master.transform.Find("Follow Point");
 
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), master.GetComponent<Collider2D>(), true);
@@ -123,6 +125,6 @@ public class FollowerMove : MonoBehaviour
         {
             state = FollowerState.JUMPING;
         }
-        //anim.SetInteger("State", (int)state);
+        anim.SetInteger("State", (int)state);
     }
 }
