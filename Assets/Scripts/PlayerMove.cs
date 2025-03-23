@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum PlayerState {
-    IDLE = 0,
-WALKING = 1,
-JUMPING =2
-}
+public  enum PlayerState
+    {
+        IDLE = 0,
+        WALKING = 1,
+        JUMPING = 2
+    }
 
 public class PlayerMove : MonoBehaviour
 {
+   
+
     public float moveSpeed = 3.5f;
     public float jumpStrength = 20f;
-    float horizontalValue;
+    private float horizontalValue;
     private Animator anim;
     private bool isGrounded = true;
     public PlayerState state = PlayerState.IDLE;
+    public Transform followPoint;
 
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -28,6 +32,7 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();//make reference to the animator which is on this gameObject with the script. 
+        followPoint = transform.Find("Follow Point");
 
 
     }
@@ -51,8 +56,21 @@ public class PlayerMove : MonoBehaviour
 
     void Move(float dir)
     {
-        if (dir > 0) sr.flipX = false;
-        else if (dir < 0) sr.flipX = true;
+        if (dir > 0)
+        {
+            sr.flipX = false;
+            followPoint.localPosition = new Vector2(
+                followPoint.localPosition.x < 0 ? followPoint.localPosition.x : -followPoint.localPosition.x, 
+                followPoint.localPosition.y);
+
+        }
+        else if (dir < 0)
+        {
+            sr.flipX = true;
+            followPoint.localPosition = new Vector2(
+                followPoint.localPosition.x > 0 ? followPoint.localPosition.x : -followPoint.localPosition.x,
+                followPoint.localPosition.y);
+        }
         Vector2 targetVelocity = new Vector2(dir * moveSpeed, rb.velocity.y);
         rb.velocity = targetVelocity;
 
