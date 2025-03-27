@@ -4,125 +4,135 @@ using System.Linq;
 using System.Resources;
 using JetBrains.Annotations;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
-public enum GameState {START, ATTACKING, PLAYERTURN, ENEMYTURN, WIN, LOSE }
-
-public class CombatManager : MonoBehaviour
-{
-    public GameState State;
+public class CombatManager : MonoBehaviour {
+    [SerializeField]
+    GameObject eventSystemPrefab;
 
     [SerializeField]
-    TMP_Text bodyText, enemyName, billyStats, enemyStats;
+    GameObject enemyUIPrefab;
+    [SerializeField]
+    Transform UICenter;
 
     [SerializeField]
     Image panelImage;
 
     [SerializeField]
-    Slider playerSlider, enemySlider;
+    GameObject buttonPrefab;
+    [SerializeField]
+    Transform buttonCenter;
 
     [SerializeField]
-    Button button1, button2, button3;
+    Slider billySlider;
+    [SerializeField]
+    TMP_Text billyName;
+
+    public float UISpacing = 100;
+    public float buttonSpacing = 100;
+    public float colorChangeSpeed = 1f;
+
+    //billy combat stats
+    int billyHP = 0;
+    int billyHPThresh = 50;
+
 
     List<Enemy> enemies;
+    List<Enemy> defaultEncounter = new List<Enemy> { new Enemy("Goon 1", 5, 10, 0, 25, 10), new Enemy("Goon 2", 5, 10, 0, 25, 10) };
 
-    private float colorChangeSpeed = 0.5f;
+    private List<GameObject> enemyUI = new List<GameObject>();
+    private List<GameObject> buttons = new List<GameObject>();
 
-    private Enemy[] defaultEnemies = { new Enemy("goon", 0, 5, 10, 30, 10) };
-
-    int billyAttack = 15;
-    int billyHP = 0;
-
-    // Start is called before the first frame update
-    void Start()
+    private int selectedButton = -1;
+    public IEnumerator MakeButtons(string[] buttonLabels, System.Action<int> callback)
     {
-        if (button1 != null)
+        int halfCount = buttonLabels.Count() / 2;
+        float spawnShift = -halfCount;
+        int selectedButton = -1;
+        float evenFix = (buttonLabels.Count() % 2 == 0) ? 0.5f : 0;
+
+        for (int i = 0; i < buttonLabels.Count(); i++)
         {
-            button1.onClick.AddListener(onButton1Click);
+            
+            buttons.Add(Instantiate(buttonPrefab, buttonCenter));
+            buttons[i].transform.localPosition = new Vector2((spawnShift + evenFix) * buttonSpacing, 0);
+            int buttonIndex = i;
+            buttons[i].GetComponentInChildren<TMP_Text>().text = buttonLabels[i];
+            buttons[i].GetComponent<Button>().onClick.AddListener(() => selectedButton = buttonIndex);
+            spawnShift++;
         }
-        if (button2 != null)
-        {
-            button2.onClick.AddListener(onButton2Click);
-        }
-        if (button3 != null)
-        {
-            button3.onClick.AddListener(onButton3Click);
-        }
-        enemies = (CombatValues.enemies != null) ? CombatValues.enemies : defaultEnemies.ToList();
+
+        while (selectedButton == -1)
+            yield return null;
         
-        State = GameState.START;
-        StartCoroutine(setUpBattle());
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        colorChange();
-        updateStats();
-
-        
-    }
-
-    void updateStats()
-    {
-        playerSlider.value = billyHP / 50f;
-        enemySlider.value = enemies[0].hp / enemies[0].hPThresh;
-        if (enemies != null)
-            enemySlider.SetValueWithoutNotify(enemies[0].hp / (float) enemies[0].hPThresh);
-        enemyName.text = enemies[0].enemyName;
-        billyStats.text = "(" + billyHP + "/" + 50 + ")";
-        enemyStats.text = "(" + enemies[0].hp + "/" + enemies[0].hPThresh + ")";
-    }
-
-    IEnumerator setUpBattle()
-    {
-        if (enemies != null)
-        enemyName.text = enemies[0].enemyName;
-       
-        display("The battle begins");
-        yield return new WaitForSeconds(5f);
-        State = GameState.PLAYERTURN;
-        StartCoroutine(playerTurn());
-    }
-
-    IEnumerator playerTurn()
-    {
-        display("choose an action");
-        button1.GetComponentInChildren<TMP_Text>().text = "Attack";
-        button2.GetComponentInChildren<TMP_Text>().text = "Run Away";
-        yield break;
-    }
-
-    IEnumerator enemyTurn()
-    {
-        int damage = enemies[0].attackStrength;
-        billyHP += damage;
-        display(enemies[0].enemyName + " deals " + damage + " damage to you!");
-
-        yield return new WaitForSeconds(2f);
-
-        if (billyHP > 50)
+        callback?.Invoke(selectedButton);
+        Debug.Log("This text should be after");
+        foreach (GameObject button  in buttons)
         {
-            State = GameState.LOSE;
-            StartCoroutine(lose());
-
+            Destroy(button);
         }
-        else
+        buttons.Clear();
+    }
+
+    void test(int buttonIndex)
+    {
+        Debug.Log("success "+buttonIndex);
+    }
+    void SpawnUI()
+    {
+        // GameObject newUI = Instantiate(enemyUIPrefab, UICenter);
+        // enemyUI.Add(newUI);
+
+        float halfCount = enemies.Count / 2;
+
+        float spawnShift = -halfCount;
+        for (int i = 0; i < enemies.Count; i++)
         {
-            State = GameState.PLAYERTURN;
-            StartCoroutine(playerTurn());
+            Debug.Log(spawnShift);
+            GameObject newUI = Instantiate(enemyUIPrefab, UICenter);
+            newUI.transform.localPosition = new Vector2(spawnShift * UISpacing, 0);
+            enemyUI.Add(newUI);
+            spawnShift++; 
         }
     }
+    void UpdateUI()
+    {
+        for (int i = 0;i < enemies.Count;i++)
+        {
+            Slider s = enemyUI[i].transform.Find("Enemy Slider").GetComponent<Slider>();
+            s.value = enemies[i].hp / enemies[i].hPThresh;
 
-    void display(string text) { 
-        bodyText.text = text;
+            //  enemyUI[i].GetComponent<TMP_Text>().text = enemies[i].enemyName;
+            TMP_Text text = enemyUI[i].transform.Find("Enemy Name").GetComponent<TMP_Text>();
+            text.text = enemies[i].enemyName+ ": (" + enemies[i].hp + "/" + enemies[i].hPThresh + ")";
+        }
+
+        billySlider.value = billyHP / billyHPThresh;
+        billyName.text = "Billy: (" + billyHP + "/" + billyHPThresh + ")";
+
     }
+
+    private void Awake()
+    {
+        if (SceneManager.sceneCount == 1)
+        {
+            Instantiate(eventSystemPrefab);
+        }
+    }
+    private void Start()
+    {
+        enemies = CombatValues.enemies ?? defaultEncounter;
+        SpawnUI();
+
+        StartCoroutine(MakeButtons(new string[] {"hello", "world"}, test));
+    }
+
     void colorChange()
     {
         Color newColor = new Color(
@@ -133,117 +143,9 @@ public class CombatManager : MonoBehaviour
         panelImage.color = newColor;
     }
 
-    IEnumerator playerAttack(int damageType)
+    private void Update()
     {
-        button1.GetComponentInChildren<TMP_Text>().text = "";
-        button2.GetComponentInChildren<TMP_Text>().text = "";
-        button3.GetComponentInChildren<TMP_Text>().text = "";
-        int damage = 0;
-        switch (damageType) {
-            case 1:
-               damage = enemies[0].takeDamage(billyAttack, 0, 0);
-                break;
-            case 2:
-                damage = enemies[0].takeDamage(0, billyAttack, 0);
-                break;
-            case 3:
-                damage = enemies[0].takeDamage(0, 0, billyAttack);
-                break;
-        }
-
-       
-        
-        display("You deal " + damage + " damage!");
-
-        yield return new WaitForSeconds(3f);
-
-        if (enemies[0].hp > enemies[0].hPThresh)
-        {
-            State = GameState.WIN;
-            StartCoroutine(win());
-        }
-        else
-        {
-            State = GameState.ENEMYTURN;
-            StartCoroutine(enemyTurn());
-        }
-
-
-       
-
+        colorChange();
+        UpdateUI();
     }
-
-    void end()
-    {
-        Scene currentScene = SceneManager.GetSceneByName("CombatScene");
-        SceneManager.UnloadSceneAsync(currentScene);
-    }
-    IEnumerator win()
-    {
-        display("You won the battle");
-        yield return new WaitForSeconds(3f);
-        end();
-    }
-
-    IEnumerator attackChoice()
-    {
-        button1.GetComponentInChildren<TMP_Text>().text = "Insult their Cool";
-        button2.GetComponentInChildren<TMP_Text>().text = "Insult their Strength";
-        button3.GetComponentInChildren<TMP_Text>().text = "Insult their Wit";
-
-        yield break;
-    }
-
-    void onButton1Click()
-    {
-        if (State == GameState.PLAYERTURN)
-        {
-            State = GameState.ATTACKING;
-            StartCoroutine(attackChoice());
-        }
-        else if (State == GameState.ATTACKING)
-        {
-            StartCoroutine(playerAttack(1));
-        }
-
-    }
-    IEnumerator runAway()
-    {
-        button1.GetComponentInChildren<TMP_Text>().text = "";
-        button2.GetComponentInChildren<TMP_Text>().text = "";
-        button3.GetComponentInChildren<TMP_Text>().text = "";
-        display("You ran away like a coward!");
-        yield return new WaitForSeconds(2f);
-        State = GameState.LOSE;
-        StartCoroutine(lose());
-    }
-
-    IEnumerator lose()
-    {
-
-        display("You lost the battle");
-        yield return new WaitForSeconds(3f);
-        end();
-    }
-    void onButton2Click()
-    {
-        if (State == GameState.PLAYERTURN)
-        {
-            StartCoroutine(runAway());
-        }
-        else if (State == GameState.ATTACKING)
-        {
-            StartCoroutine(playerAttack(2));
-        }
-
-    }
-
-    void onButton3Click()
-    {
-        if (State == GameState.ATTACKING)
-        {
-            StartCoroutine(playerAttack(3));
-        }
-    }
-
 }
