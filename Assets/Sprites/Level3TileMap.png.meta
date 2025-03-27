@@ -1,0 +1,1236 @@
+fileFormatVersion: 2
+guid: e1132c7770c1801438d89ef41a58a239
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 205
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level3TileMap_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 4437
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32eac353678764c4c9f07c0daa082087
+      internalID: -1993361721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_1
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 4435
+        width: 518
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff73b98d15679934989b13384b1cc07d
+      internalID: -1019471453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_2
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 4435
+        width: 517
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37974b8ff6535ba46ac9226176466764
+      internalID: 1257929473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_3
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 4452
+        width: 518
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de21a62142f130541b18d508a73266ed
+      internalID: 2061073634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_4
+      rect:
+        serializedVersion: 2
+        x: 2221
+        y: 4410
+        width: 644
+        height: 564
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc8440d28492364fba199a43a006b26
+      internalID: 1755654551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_5
+      rect:
+        serializedVersion: 2
+        x: 2909
+        y: 3910
+        width: 701
+        height: 1059
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0ac4afd4a864f48a3c37e6a329350a
+      internalID: -640290716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_6
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 4323
+        width: 405
+        height: 642
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f02d7ae6595484fae20dad4ab02ab1
+      internalID: -122376148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_7
+      rect:
+        serializedVersion: 2
+        x: 4340
+        y: 4327
+        width: 317
+        height: 638
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9025368f6a9354b8d0bd2210390eb5
+      internalID: -2039038667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_8
+      rect:
+        serializedVersion: 2
+        x: 4752
+        y: 4342
+        width: 166
+        height: 632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716b9d5f31951c04aafbd114985f7298
+      internalID: 5491907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_9
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 3900
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c887758d98f32c34699a465068d7c9bf
+      internalID: -158185251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_10
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 3900
+        width: 517
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f82f96bd475d34ab14e0a794d4623f
+      internalID: -1128883006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_11
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 3900
+        width: 517
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1db7ed384418446bb53405ca1982ca
+      internalID: -2012930511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_12
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 3900
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971ec0cbf194a6148a238cb63ed294a3
+      internalID: 160770289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_13
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 4020
+        width: 637
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0b0d126ada6d3429bc549f7af6ef88
+      internalID: -826790419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_14
+      rect:
+        serializedVersion: 2
+        x: 3705
+        y: 3619
+        width: 295
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ce6535178be0b4bb17ec048e4ea93b
+      internalID: 301478167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_15
+      rect:
+        serializedVersion: 2
+        x: 4140
+        y: 3619
+        width: 297
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3612a38cd5e5f41bdef31b212de399
+      internalID: -373032950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_16
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 3361
+        width: 518
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82815adadcb6ab2408862c82845f16a2
+      internalID: 639610565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_17
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 3363
+        width: 517
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194da79db4d8b87448c5a2f71aa9ca6a
+      internalID: 1349111795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_18
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 3363
+        width: 517
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811d576877512cd438591d45222f585f
+      internalID: -731987422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_19
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 3339
+        width: 518
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e4fc4a7cb31a34eb43f1d76e24429e
+      internalID: -618203925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_20
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 3397
+        width: 517
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e570e4aae21c64cbea1256920a54ca
+      internalID: 1688854396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_21
+      rect:
+        serializedVersion: 2
+        x: 4635
+        y: 3842
+        width: 283
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e365ca14864c1647af23720d817802b
+      internalID: -1862369021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_22
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 2494
+        width: 952
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabe7a419817c4e40890af48e58561a7
+      internalID: -2036873954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_23
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 2494
+        width: 581
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8303fc514682c248b8923b26b645d2b
+      internalID: 916977926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_24
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 2455
+        width: 347
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4a92c74c630354d99fc9b5f109d963
+      internalID: 537055395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_25
+      rect:
+        serializedVersion: 2
+        x: 2462
+        y: 2435
+        width: 41
+        height: 762
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35198eea86f0f9148a6c90a609bf118a
+      internalID: -1230552017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_26
+      rect:
+        serializedVersion: 2
+        x: 3029
+        y: 3016
+        width: 1833
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1adb029dbe698d41bab2ee1ac200857
+      internalID: 1184658545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_27
+      rect:
+        serializedVersion: 2
+        x: 2936
+        y: 2633
+        width: 1963
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0df167f7f517d44a233d0471c37544
+      internalID: 59913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_28
+      rect:
+        serializedVersion: 2
+        x: 2868
+        y: 2242
+        width: 2065
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8b50cab0f0d9c48aac27f4c80cda2a
+      internalID: -2024906845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_29
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1254
+        width: 808
+        height: 959
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81fcb760d43749842b61b7225b5923ec
+      internalID: -844980782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_30
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1256
+        width: 808
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e76a0b868ba4742aef27f85559574a
+      internalID: 85137903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_31
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 1691
+        width: 42
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1637ad11cb7f2a94996b3efe0dc695ae
+      internalID: 873398372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_32
+      rect:
+        serializedVersion: 2
+        x: 2858
+        y: 1686
+        width: 1486
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4efe2afd01d5f4b9c405040e90018b
+      internalID: 848563901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_33
+      rect:
+        serializedVersion: 2
+        x: 2284
+        y: 1078
+        width: 2634
+        height: 495
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4f3e5ff494aff409bc9b31946e0e82
+      internalID: -1125553263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_34
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 65
+        width: 801
+        height: 959
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf9fc251371fca4484d25547055e6af
+      internalID: -21759794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_35
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 65
+        width: 800
+        height: 959
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872d6d749d3580d42966749dfb68171d
+      internalID: 1192931180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_36
+      rect:
+        serializedVersion: 2
+        x: 2692
+        y: 819
+        width: 39
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3f867cd75859940930fa0425c478e1
+      internalID: 305013153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_37
+      rect:
+        serializedVersion: 2
+        x: 4020
+        y: 504
+        width: 896
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddd9dbf5e8b43d469d1c09d630b8350
+      internalID: -172162649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_38
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 743
+        width: 1574
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65c5c93340110240a3075d9fcd904fa
+      internalID: 1249323634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_39
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 377
+        width: 295
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7904bf5426d03bc48bf03f2d5187aa90
+      internalID: 142186940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_40
+      rect:
+        serializedVersion: 2
+        x: 2372
+        y: 621
+        width: 678
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db2567c811fc7ff4c9e22aa6d018265b
+      internalID: -1474087575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_41
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 377
+        width: 197
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314499da274d5e140bf46ea0c89e8e4b
+      internalID: 888284081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_42
+      rect:
+        serializedVersion: 2
+        x: 3702
+        y: 641
+        width: 176
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b08e3991ba0e3e42904a88035c52a2c
+      internalID: -53359360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_43
+      rect:
+        serializedVersion: 2
+        x: 2438
+        y: 504
+        width: 549
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e7c43c89d46b146b43dbce189775bf
+      internalID: -1723509767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_44
+      rect:
+        serializedVersion: 2
+        x: 3685
+        y: 40
+        width: 266
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b70ecc355dc9ff4fbe984df6ab47b3b
+      internalID: 1794633735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_45
+      rect:
+        serializedVersion: 2
+        x: 2301
+        y: 68
+        width: 183
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ccbb6233fb3d341b7a46505e9d9d8c
+      internalID: -39645592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_46
+      rect:
+        serializedVersion: 2
+        x: 2623
+        y: 265
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9804a1433c0de124b9c8ab718fc13ad8
+      internalID: -858618599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_47
+      rect:
+        serializedVersion: 2
+        x: 2885
+        y: 143
+        width: 166
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89973631517837a4597c30bb2adbf206
+      internalID: -185223026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_48
+      rect:
+        serializedVersion: 2
+        x: 3204
+        y: 27
+        width: 296
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59bef609790b46f4da73a28610e1bad4
+      internalID: -1529789050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_49
+      rect:
+        serializedVersion: 2
+        x: 4205
+        y: 40
+        width: 711
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb85dd8c5d0e1da4fbc9c439c7387bd4
+      internalID: 353609221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level3TileMap_50
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 49
+        width: 166
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0a60907494bf545b4f6f7f720d756b
+      internalID: -818468157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Level3TileMap_0: -1993361721
+      Level3TileMap_1: -1019471453
+      Level3TileMap_10: -1128883006
+      Level3TileMap_11: -2012930511
+      Level3TileMap_12: 160770289
+      Level3TileMap_13: -826790419
+      Level3TileMap_14: 301478167
+      Level3TileMap_15: -373032950
+      Level3TileMap_16: 639610565
+      Level3TileMap_17: 1349111795
+      Level3TileMap_18: -731987422
+      Level3TileMap_19: -618203925
+      Level3TileMap_2: 1257929473
+      Level3TileMap_20: 1688854396
+      Level3TileMap_21: -1862369021
+      Level3TileMap_22: -2036873954
+      Level3TileMap_23: 916977926
+      Level3TileMap_24: 537055395
+      Level3TileMap_25: -1230552017
+      Level3TileMap_26: 1184658545
+      Level3TileMap_27: 59913
+      Level3TileMap_28: -2024906845
+      Level3TileMap_29: -844980782
+      Level3TileMap_3: 2061073634
+      Level3TileMap_30: 85137903
+      Level3TileMap_31: 873398372
+      Level3TileMap_32: 848563901
+      Level3TileMap_33: -1125553263
+      Level3TileMap_34: -21759794
+      Level3TileMap_35: 1192931180
+      Level3TileMap_36: 305013153
+      Level3TileMap_37: -172162649
+      Level3TileMap_38: 1249323634
+      Level3TileMap_39: 142186940
+      Level3TileMap_4: 1755654551
+      Level3TileMap_40: -1474087575
+      Level3TileMap_41: 888284081
+      Level3TileMap_42: -53359360
+      Level3TileMap_43: -1723509767
+      Level3TileMap_44: 1794633735
+      Level3TileMap_45: -39645592
+      Level3TileMap_46: -858618599
+      Level3TileMap_47: -185223026
+      Level3TileMap_48: -1529789050
+      Level3TileMap_49: 353609221
+      Level3TileMap_5: -640290716
+      Level3TileMap_50: -818468157
+      Level3TileMap_6: -122376148
+      Level3TileMap_7: -2039038667
+      Level3TileMap_8: 5491907
+      Level3TileMap_9: -158185251
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

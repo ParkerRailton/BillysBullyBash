@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Quest Trigger
+  - Insult Pickup
+  - Battle Trigger
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Foreground
   - Water
   - UI
   - 
