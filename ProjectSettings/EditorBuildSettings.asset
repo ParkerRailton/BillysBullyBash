@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CombatScene.unity
     guid: 7cb286b2282c03b46bc8423726ced1b4
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: fd8c632181f4a5849ac4f4db44b4058f
-  - enabled: 1
     path: Assets/Scenes/TutorialLevel.unity
     guid: 3f8be3e743c27d0489ad270dfb172b89
   - enabled: 1
