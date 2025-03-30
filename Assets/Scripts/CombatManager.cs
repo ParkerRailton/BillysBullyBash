@@ -71,8 +71,11 @@ public class CombatManager : MonoBehaviour
         float spawnShift = -halfCount;
         int selectedButton = -1;
         float evenFix = (buttonLabels.Count() % 2 == 0) ? 0.5f : 0f;
-        Debug.Log("selectedButton = " + selectedButton);
-        Debug.Log(buttonLabels.Length);
+        foreach (string s in buttonLabels)
+        {
+            Debug.Log(s);
+        }
+
         for (int i = 0; i < buttonLabels.Count(); i++)
         {
             Debug.Log(buttonLabels[i]);
@@ -168,8 +171,11 @@ public class CombatManager : MonoBehaviour
             Instantiate(eventSystemPrefab);
         }
     }
+    
     private void Start()
     {
+        enemies = CombatValues.enemies ?? defaultEncounter;
+        insults = CombatValues.insults;
         StartCoroutine(SetUpBattle());
 
     }
@@ -204,8 +210,7 @@ public class CombatManager : MonoBehaviour
 
     IEnumerator SetUpBattle()
     {
-        enemies = CombatValues.enemies ?? defaultEncounter;
-        insults = CombatValues.insults;
+        
         SpawnUI();
         yield return StartCoroutine(Display("The battle begins!"));
         yield return new WaitForSeconds(textWait);
@@ -238,7 +243,7 @@ public class CombatManager : MonoBehaviour
 
         if (i == numOfButtons - 1)
         {
-            // Run away logic here
+            StartCoroutine(Lose());
             return;
         }
 
@@ -291,7 +296,7 @@ public class CombatManager : MonoBehaviour
         if (allEnemiesDefeated)
         {
             gameState = GameState.WIN;
-            //win
+            StartCoroutine(Win());
         }
         else
         {
@@ -323,12 +328,28 @@ public class CombatManager : MonoBehaviour
         if (gameState == GameState.LOSE)
         {
             gameState = GameState.LOSE;
-            //lose
+            StartCoroutine(Lose());
         }
         else
         {
             gameState = GameState.PLAYERTURN;
             yield return StartCoroutine(PlayerTurn());
         }
+    }
+
+    IEnumerator Win()
+    {
+        CombatValues.loadedFight.battleWon = true;
+        CombatValues.loadedFight = null;
+        yield return StartCoroutine(Display("Billy won the battle!"));
+        SceneManager.UnloadSceneAsync("CombatScene");
+    }
+
+    IEnumerator Lose()
+    {
+        
+        CombatValues.loadedFight = null;
+        yield return StartCoroutine(Display("Billy lost the battle!"));
+        SceneManager.UnloadSceneAsync("CombatScene");
     }
 }

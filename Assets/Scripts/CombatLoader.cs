@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class CombatLoader : MonoBehaviour
 
     [SerializeField]
     List<Enemy> enemies;
+
+    public bool battleWon = false;
 
     void Start()
     {
@@ -30,12 +33,14 @@ public class CombatLoader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && SceneManager.sceneCount <= 1)
+        if ((collision.CompareTag("Player") && SceneManager.sceneCount <= 1) && !battleWon)
         {
+            CombatValues.loadedFight = this;
             loadCombat();
         }
     }
 
+   
 
     void loadCombat()
     {
