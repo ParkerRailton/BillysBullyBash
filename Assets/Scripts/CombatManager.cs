@@ -110,7 +110,11 @@ public class CombatManager : MonoBehaviour
     {
         // GameObject newUI = Instantiate(enemyUIPrefab, UICenter);
         // enemyUI.Add(newUI);
-
+        foreach(GameObject go in enemyUI)
+        {
+            Destroy(go);
+        }
+        enemyUI.Clear();
         float halfCount = enemies.Count / 2;
 
         float spawnShift = -halfCount;
@@ -128,14 +132,14 @@ public class CombatManager : MonoBehaviour
         for (int i = 0; i < enemies.Count; i++)
         {
             Slider s = enemyUI[i].transform.Find("Enemy Slider").GetComponent<Slider>();
-            s.value = (float) enemies[i].hp / enemies[i].hPThresh;
+            s.value = (float)enemies[i].hp / enemies[i].hPThresh;
 
             //  enemyUI[i].GetComponent<TMP_Text>().text = enemies[i].enemyName;
             TMP_Text text = enemyUI[i].transform.Find("Enemy Name").GetComponent<TMP_Text>();
             text.text = enemies[i].enemyName + ": (" + enemies[i].hp + "/" + enemies[i].hPThresh + ")";
         }
 
-        billySlider.value = (float) billyHP / billyHPThresh;
+        billySlider.value = (float)billyHP / billyHPThresh;
         billyName.text = "Billy: (" + billyHP + "/" + billyHPThresh + ")";
 
     }
@@ -214,7 +218,7 @@ public class CombatManager : MonoBehaviour
     {
         yield return StartCoroutine((Display("Choose an action:")));
         List<string> buttons = new List<string>();
-       
+
         foreach (Enemy e in enemies)
         {
             if (e.hp < e.hPThresh)
@@ -223,7 +227,7 @@ public class CombatManager : MonoBehaviour
             }
         }
         buttons.Add("Flee");
-        
+
         yield return StartCoroutine(MakeButtons(buttons.ToArray(), PlayerTurnButtonHandler));
         yield break;
     }
@@ -255,17 +259,7 @@ public class CombatManager : MonoBehaviour
 
     void InsultSelectionHandler(int i, int numOfButtons)
     {
-        List<Enemy> livingEnemies = new List<Enemy>(enemies);
-        foreach (Enemy e in livingEnemies)
-        {
-            if (e.hp >= e.hPThresh)
-            {
-                livingEnemies.Remove(e);
-            }
-        }
-
-        
-        StartCoroutine(DamageDisplay(livingEnemies[selectedEnemy].takeDamage(insults[i]), livingEnemies[selectedEnemy].enemyName));
+        StartCoroutine(DamageDisplay(enemies[selectedEnemy].takeDamage(insults[i]), enemies[selectedEnemy].enemyName));
     }
 
     IEnumerator DamageDisplay(int damage, string enemyName)
@@ -273,13 +267,24 @@ public class CombatManager : MonoBehaviour
         yield return StartCoroutine(Display($"You dealt {damage} damage to {enemyName}!"));
         yield return new WaitForSeconds(textWait);
         bool allEnemiesDefeated = true;
-        foreach (Enemy e in enemies)
+        List<int> deadEnemies = new List<int>();
+        for (int i = 0; i < enemies.Count; i++) 
         {
-            if (e.hp >= e.hPThresh)
+            if (enemies[i].hp < enemies[i].hPThresh)
             {
                 allEnemiesDefeated = false;
-                break;
             }
+            else
+            {
+                yield return StartCoroutine(Display($"{enemies[i].enemyName} died!"));
+                yield return new WaitForSeconds(textWait);
+                deadEnemies.Add(i);
+                SpawnUI();
+            }
+        }
+        foreach (int deadIndex in deadEnemies)
+        {
+            enemies.Remove(enemies[deadIndex]);
         }
 
         if (allEnemiesDefeated)
@@ -324,5 +329,5 @@ public class CombatManager : MonoBehaviour
             gameState = GameState.PLAYERTURN;
             yield return StartCoroutine(PlayerTurn());
         }
-    } 
+    }
 }
