@@ -12,9 +12,9 @@ public class Enemy
     public int hPThresh;
     public int attackStrength;
 
-    public int takeDamage(int cool, int strength, int wit)
+    public int takeDamage(Insult insult)
     {  
-        int damage = Math.Max(cool - this.cool, 0) + Math.Max(strength - this.strength, 0) + Math.Max(wit - this.wit, 0);
+        int damage = Math.Max(insult.cool - this.cool, 0) + Math.Max(insult.strength - this.strength, 0) + Math.Max(insult.wit - this.wit, 0);
         hp += damage;
         return damage;
     }
