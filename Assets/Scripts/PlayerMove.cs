@@ -49,7 +49,7 @@ public class PlayerMove : MonoBehaviour
             {
                 Jump();
             }
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) //detects whent he player pressesthe button to move and plays the audio
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) //detects whent he player presses the button to move and plays the audio
             {
                 footSteps.enabled = true;
             }
