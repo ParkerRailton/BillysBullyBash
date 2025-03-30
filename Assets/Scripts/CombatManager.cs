@@ -276,16 +276,17 @@ public class CombatManager : MonoBehaviour
             }
             else
             {
-                yield return StartCoroutine(Display($"{enemies[i].enemyName} died!"));
+                yield return StartCoroutine(Display($"{enemies[i].enemyName} was defeated!"));
                 yield return new WaitForSeconds(textWait);
                 deadEnemies.Add(i);
-                SpawnUI();
+                
             }
         }
         foreach (int deadIndex in deadEnemies)
         {
             enemies.Remove(enemies[deadIndex]);
         }
+        if (deadEnemies.Count > 0) SpawnUI();
 
         if (allEnemiesDefeated)
         {
