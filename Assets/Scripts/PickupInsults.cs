@@ -11,6 +11,7 @@ public class PickupInsults : MonoBehaviour
     {
         
       gameObject.SetActive(false);
+        CombatValues.insults.Add(insult);
                 
     }
     private void OnTriggerEnter2D(Collider2D other)
