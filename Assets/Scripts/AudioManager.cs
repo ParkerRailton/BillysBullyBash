@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource levelMusic;
     public AudioSource battleMusic;
 
-    // Update is called once per frame
+    //When adding audio into the audio manager in the inspector, create 2 audio source components - one with battle music and one with the level music. Then, drag them into the corresponding spots. 
     void Update()
     {
         if (SceneManager.sceneCount <= 1)
