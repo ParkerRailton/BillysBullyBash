@@ -4,126 +4,177 @@ using System.Linq;
 using System.Resources;
 using JetBrains.Annotations;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public enum GameState {START, ATTACKING, PLAYERTURN, ENEMYTURN, WIN, LOSE }
-
+public enum GameState
+{
+    START,
+    WIN,
+    LOSE,
+    PLAYERTURN,
+    ENEMYTURN
+}
 public class CombatManager : MonoBehaviour
 {
-    public GameState State;
+    [SerializeField]
+    GameObject eventSystemPrefab;
 
     [SerializeField]
-    TMP_Text bodyText, enemyName, billyStats, enemyStats;
+    GameObject enemyUIPrefab;
+    [SerializeField]
+    Transform UICenter;
 
     [SerializeField]
     Image panelImage;
 
     [SerializeField]
-    Slider playerSlider, enemySlider;
+    GameObject buttonPrefab;
+    [SerializeField]
+    Transform buttonCenter;
 
     [SerializeField]
-    Button button1, button2, button3;
+    Slider billySlider;
+    [SerializeField]
+    TMP_Text billyName, textBox;
+
+    public GameState gameState = GameState.START;
+
+    public float UISpacing = 100;
+    public float buttonSpacing = 100;
+    public float colorChangeSpeed = 1f;
+    public float textDelay = 0.2f;
+    public float textWait = 2f;
+    //billy combat stats
+    int billyHP = 0;
+    int billyHPThresh = 50;
+
 
     List<Enemy> enemies;
+    List<Enemy> defaultEncounter = new List<Enemy> { new Enemy("Goon 1", 5, 10, 0, 25, 10), new Enemy("Goon 2", 5, 10, 0, 25, 10) };
+    List<Insult> insults;
+    private List<GameObject> enemyUI = new List<GameObject>();
+    private List<GameObject> buttons = new List<GameObject>();
 
-    private float colorChangeSpeed = 0.5f;
+    private int selectedEnemy;
 
-    private Enemy[] defaultEnemies = { new Enemy("goon", 0, 5, 10, 30, 10) };
-
-    int billyAttack = 15;
-    int billyHP = 0;
-
-    // Start is called before the first frame update
-    void Start()
+    public IEnumerator MakeButtons(string[] buttonLabels, System.Action<int, int> callback)
     {
-        if (button1 != null)
+
+        int halfCount = buttonLabels.Count() / 2;
+        float spawnShift = -halfCount;
+        int selectedButton = -1;
+        float evenFix = (buttonLabels.Count() % 2 == 0) ? 0.5f : 0f;
+        Debug.Log("selectedButton = " + selectedButton);
+        Debug.Log(buttonLabels.Length);
+        for (int i = 0; i < buttonLabels.Count(); i++)
         {
-            button1.onClick.AddListener(onButton1Click);
+            Debug.Log(buttonLabels[i]);
+            GameObject newButton = Instantiate(buttonPrefab, buttonCenter);
+            if (newButton == null)
+            {
+                Debug.Log("BAD");
+            }
+            else
+            {
+                Debug.Log("GOOD");
+            }
+            buttons.Add(newButton);
+            buttons[i].transform.localPosition = new Vector2((spawnShift + evenFix) * buttonSpacing, 0);
+            int buttonIndex = i;
+            buttons[i].GetComponentInChildren<TMP_Text>().text = buttonLabels[i];
+            buttons[i].GetComponent<Button>().onClick.AddListener(() => selectedButton = buttonIndex);
+            spawnShift++;
         }
-        if (button2 != null)
+
+        while (selectedButton == -1)
+            yield return null;
+
+        callback?.Invoke(selectedButton, buttonLabels.Length);
+        foreach (GameObject button in buttons)
         {
-            button2.onClick.AddListener(onButton2Click);
+            Destroy(button);
         }
-        if (button3 != null)
+        buttons.Clear();
+    }
+
+
+
+    void SpawnUI()
+    {
+        // GameObject newUI = Instantiate(enemyUIPrefab, UICenter);
+        // enemyUI.Add(newUI);
+        foreach(GameObject go in enemyUI)
         {
-            button3.onClick.AddListener(onButton3Click);
+            Destroy(go);
         }
-        enemies = (CombatValues.enemies != null) ? CombatValues.enemies : defaultEnemies.ToList();
-        
-        State = GameState.START;
-        StartCoroutine(setUpBattle());
-        
-    }
+        enemyUI.Clear();
+        float halfCount = enemies.Count / 2;
 
-    // Update is called once per frame
-    void Update()
-    {
-        colorChange();
-        updateStats();
-
-        
-    }
-
-    void updateStats()
-    {
-        playerSlider.value = billyHP / 50f;
-        enemySlider.value = enemies[0].hp / enemies[0].hPThresh;
-        if (enemies != null)
-            enemySlider.SetValueWithoutNotify(enemies[0].hp / (float) enemies[0].hPThresh);
-        enemyName.text = enemies[0].enemyName;
-        billyStats.text = "(" + billyHP + "/" + 50 + ")";
-        enemyStats.text = "(" + enemies[0].hp + "/" + enemies[0].hPThresh + ")";
-    }
-
-    IEnumerator setUpBattle()
-    {
-        if (enemies != null)
-        enemyName.text = enemies[0].enemyName;
-       
-        display("The battle begins");
-        yield return new WaitForSeconds(5f);
-        State = GameState.PLAYERTURN;
-        StartCoroutine(playerTurn());
-    }
-
-    IEnumerator playerTurn()
-    {
-        display("choose an action");
-        button1.GetComponentInChildren<TMP_Text>().text = "Attack";
-        button2.GetComponentInChildren<TMP_Text>().text = "Run Away";
-        yield break;
-    }
-
-    IEnumerator enemyTurn()
-    {
-        int damage = enemies[0].attackStrength;
-        billyHP += damage;
-        display(enemies[0].enemyName + " deals " + damage + " damage to you!");
-
-        yield return new WaitForSeconds(2f);
-
-        if (billyHP > 50)
+        float spawnShift = -halfCount;
+        for (int i = 0; i < enemies.Count; i++)
         {
-            State = GameState.LOSE;
-            StartCoroutine(lose());
-
-        }
-        else
-        {
-            State = GameState.PLAYERTURN;
-            StartCoroutine(playerTurn());
+            //Debug.Log(spawnShift);
+            GameObject newUI = Instantiate(enemyUIPrefab, UICenter);
+            newUI.transform.localPosition = new Vector2(spawnShift * UISpacing, 0);
+            enemyUI.Add(newUI);
+            spawnShift++;
         }
     }
+    void UpdateUI()
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            Slider s = enemyUI[i].transform.Find("Enemy Slider").GetComponent<Slider>();
+            s.value = (float)enemies[i].hp / enemies[i].hPThresh;
 
-    void display(string text) { 
-        bodyText.text = text;
+            //  enemyUI[i].GetComponent<TMP_Text>().text = enemies[i].enemyName;
+            TMP_Text text = enemyUI[i].transform.Find("Enemy Name").GetComponent<TMP_Text>();
+            text.text = enemies[i].enemyName + ": (" + enemies[i].hp + "/" + enemies[i].hPThresh + ")";
+        }
+
+        billySlider.value = (float)billyHP / billyHPThresh;
+        billyName.text = "Billy: (" + billyHP + "/" + billyHPThresh + ")";
+
     }
-    void colorChange()
+    IEnumerator Display(string text)
+    {
+        textBox.text = string.Empty;
+        if (string.IsNullOrEmpty(text)) yield break;
+        char[] chars = text.ToCharArray();
+        int i = 0;
+        while (i < chars.Length)
+        {
+            textBox.text += chars[i++];
+            yield return new WaitForSeconds(textDelay);
+        }
+    }
+
+    void ClearDisplay()
+    {
+        textBox.text = string.Empty;
+    }
+
+    private void Awake()
+    {
+        if (SceneManager.sceneCount == 1)
+        {
+            Instantiate(eventSystemPrefab);
+        }
+    }
+    private void Start()
+    {
+        StartCoroutine(SetUpBattle());
+
+    }
+
+    void ColorChange()
     {
         Color newColor = new Color(
         Mathf.PingPong(Time.time * colorChangeSpeed, 1),  // R
@@ -133,117 +184,151 @@ public class CombatManager : MonoBehaviour
         panelImage.color = newColor;
     }
 
-    IEnumerator playerAttack(int damageType)
+    void EnemyColorChange()
     {
-        button1.GetComponentInChildren<TMP_Text>().text = "";
-        button2.GetComponentInChildren<TMP_Text>().text = "";
-        button3.GetComponentInChildren<TMP_Text>().text = "";
-        int damage = 0;
-        switch (damageType) {
-            case 1:
-               damage = enemies[0].takeDamage(billyAttack, 0, 0);
-                break;
-            case 2:
-                damage = enemies[0].takeDamage(0, billyAttack, 0);
-                break;
-            case 3:
-                damage = enemies[0].takeDamage(0, 0, billyAttack);
-                break;
-        }
+        Color newColor = new Color(Mathf.PingPong(Time.time * colorChangeSpeed, 1), 0, 0);
+        panelImage.color = newColor;
+    }
 
-       
-        
-        display("You deal " + damage + " damage!");
+    void ColorManager()
+    {
+        if (gameState == GameState.ENEMYTURN) EnemyColorChange();
+        else ColorChange();
+    }
 
-        yield return new WaitForSeconds(3f);
+    private void Update()
+    {
+        ColorManager();
+        UpdateUI();
+    }
 
-        if (enemies[0].hp > enemies[0].hPThresh)
+    IEnumerator SetUpBattle()
+    {
+        enemies = CombatValues.enemies ?? defaultEncounter;
+        insults = CombatValues.insults;
+        SpawnUI();
+        yield return StartCoroutine(Display("The battle begins!"));
+        yield return new WaitForSeconds(textWait);
+        ClearDisplay();
+        gameState = GameState.PLAYERTURN;
+        StartCoroutine(PlayerTurn());
+    }
+
+    IEnumerator PlayerTurn()
+    {
+        yield return StartCoroutine((Display("Choose an action:")));
+        List<string> buttons = new List<string>();
+
+        foreach (Enemy e in enemies)
         {
-            State = GameState.WIN;
-            StartCoroutine(win());
+            if (e.hp < e.hPThresh)
+            {
+                buttons.Add("Attack " + e.enemyName);
+            }
         }
-        else
-        {
-            State = GameState.ENEMYTURN;
-            StartCoroutine(enemyTurn());
-        }
+        buttons.Add("Flee");
 
-
-       
-
-    }
-
-    void end()
-    {
-        Scene currentScene = SceneManager.GetSceneByName("CombatScene");
-        SceneManager.UnloadSceneAsync(currentScene);
-    }
-    IEnumerator win()
-    {
-        display("You won the battle");
-        yield return new WaitForSeconds(3f);
-        end();
-    }
-
-    IEnumerator attackChoice()
-    {
-        button1.GetComponentInChildren<TMP_Text>().text = "Insult their Cool";
-        button2.GetComponentInChildren<TMP_Text>().text = "Insult their Strength";
-        button3.GetComponentInChildren<TMP_Text>().text = "Insult their Wit";
-
+        yield return StartCoroutine(MakeButtons(buttons.ToArray(), PlayerTurnButtonHandler));
         yield break;
     }
 
-    void onButton1Click()
+    void PlayerTurnButtonHandler(int i, int numOfButtons)
     {
-        if (State == GameState.PLAYERTURN)
+        selectedEnemy = i;
+
+        if (i == numOfButtons - 1)
         {
-            State = GameState.ATTACKING;
-            StartCoroutine(attackChoice());
-        }
-        else if (State == GameState.ATTACKING)
-        {
-            StartCoroutine(playerAttack(1));
+            // Run away logic here
+            return;
         }
 
-    }
-    IEnumerator runAway()
-    {
-        button1.GetComponentInChildren<TMP_Text>().text = "";
-        button2.GetComponentInChildren<TMP_Text>().text = "";
-        button3.GetComponentInChildren<TMP_Text>().text = "";
-        display("You ran away like a coward!");
-        yield return new WaitForSeconds(2f);
-        State = GameState.LOSE;
-        StartCoroutine(lose());
+        StartCoroutine(InsultSelection());
     }
 
-    IEnumerator lose()
+    IEnumerator InsultSelection()
     {
-
-        display("You lost the battle");
-        yield return new WaitForSeconds(3f);
-        end();
-    }
-    void onButton2Click()
-    {
-        if (State == GameState.PLAYERTURN)
+        List<string> buttons = new List<string>();
+        foreach (Insult i in insults)
         {
-            StartCoroutine(runAway());
+            buttons.Add(i.name);
         }
-        else if (State == GameState.ATTACKING)
-        {
-            StartCoroutine(playerAttack(2));
-        }
-
+        yield return StartCoroutine(Display("Select an insult:"));
+        //Debug.Log(i.Count);
+        yield return StartCoroutine(MakeButtons(buttons.ToArray(), InsultSelectionHandler));
     }
 
-    void onButton3Click()
+    void InsultSelectionHandler(int i, int numOfButtons)
     {
-        if (State == GameState.ATTACKING)
+        StartCoroutine(DamageDisplay(enemies[selectedEnemy].takeDamage(insults[i]), enemies[selectedEnemy].enemyName));
+    }
+
+    IEnumerator DamageDisplay(int damage, string enemyName)
+    {
+        yield return StartCoroutine(Display($"You dealt {damage} damage to {enemyName}!"));
+        yield return new WaitForSeconds(textWait);
+        bool allEnemiesDefeated = true;
+        List<int> deadEnemies = new List<int>();
+        for (int i = 0; i < enemies.Count; i++) 
         {
-            StartCoroutine(playerAttack(3));
+            if (enemies[i].hp < enemies[i].hPThresh)
+            {
+                allEnemiesDefeated = false;
+            }
+            else
+            {
+                yield return StartCoroutine(Display($"{enemies[i].enemyName} was defeated!"));
+                yield return new WaitForSeconds(textWait);
+                deadEnemies.Add(i);
+                
+            }
+        }
+        foreach (int deadIndex in deadEnemies)
+        {
+            enemies.Remove(enemies[deadIndex]);
+        }
+        if (deadEnemies.Count > 0) SpawnUI();
+
+        if (allEnemiesDefeated)
+        {
+            gameState = GameState.WIN;
+            //win
+        }
+        else
+        {
+
+
+            gameState = GameState.ENEMYTURN;
+            yield return StartCoroutine(EnemyTurn());
         }
     }
 
+    IEnumerator EnemyTurn()
+    {
+        foreach (Enemy e in enemies)
+        {
+            if (e.hp < e.hPThresh)
+            {
+                billyHP += e.strength;
+                yield return StartCoroutine(Display($"{e.enemyName} dealt {e.strength} damage to Billy!"));
+                yield return new WaitForSeconds(textWait);
+            }
+
+            if (billyHP >= billyHPThresh)
+            {
+                gameState = GameState.LOSE;
+                break;
+            }
+        }
+
+        if (gameState == GameState.LOSE)
+        {
+            gameState = GameState.LOSE;
+            //lose
+        }
+        else
+        {
+            gameState = GameState.PLAYERTURN;
+            yield return StartCoroutine(PlayerTurn());
+        }
+    }
 }

@@ -21,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     private bool isGrounded = true;
     public PlayerState state = PlayerState.IDLE;
     public Transform followPoint;
+    public AudioSource footSteps;
 
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -47,6 +48,14 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
+            }
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) //detects whent he player presses the button to move and plays the audio
+            {
+                footSteps.enabled = true;
+            }
+            else
+            {
+                footSteps.enabled = false;
             }
         }
         DetermineState();
