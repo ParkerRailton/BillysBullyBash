@@ -43,6 +43,8 @@ public class CombatManager : MonoBehaviour
     Slider billySlider;
     [SerializeField]
     TMP_Text billyName, textBox;
+    [SerializeField]
+    Sprite defaultSprite;
 
     public GameState gameState = GameState.START;
 
@@ -134,12 +136,20 @@ public class CombatManager : MonoBehaviour
     {
         for (int i = 0; i < enemies.Count; i++)
         {
+            enemies[i].sprite ??= defaultSprite;
             Slider s = enemyUI[i].transform.Find("Enemy Slider").GetComponent<Slider>();
             s.value = (float)enemies[i].hp / enemies[i].hPThresh;
+            
+
 
             //  enemyUI[i].GetComponent<TMP_Text>().text = enemies[i].enemyName;
             TMP_Text text = enemyUI[i].transform.Find("Enemy Name").GetComponent<TMP_Text>();
             text.text = enemies[i].enemyName + ": (" + enemies[i].hp + "/" + enemies[i].hPThresh + ")";
+
+            Image image = enemyUI[i].transform.Find("Image").GetComponent<Image>();
+            if (image != null) Debug.Log("image found");
+            else Debug.Log("image missing");
+            image.sprite = enemies[i].sprite;
         }
 
         billySlider.value = (float)billyHP / billyHPThresh;
@@ -228,6 +238,7 @@ public class CombatManager : MonoBehaviour
         {
             if (e.hp < e.hPThresh)
             {
+
                 buttons.Add("Attack " + e.enemyName);
             }
         }
