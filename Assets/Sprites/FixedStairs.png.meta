@@ -1,0 +1,1236 @@
+fileFormatVersion: 2
+guid: b911d72d2c07e1049a69babb9bc58df5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FixedStairs_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 4437
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1d81e390314be4094d3e4db761e11f
+      internalID: 55524245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_1
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 4435
+        width: 518
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc41ce9b707574248b43f3da1ce2f7c0
+      internalID: -1370375023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_2
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 4435
+        width: 517
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b424bd88abd1424449bc1acc726d2b24
+      internalID: -1959618682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_3
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 4452
+        width: 518
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c4e63b36a13c74a9a4bba228b0fffb
+      internalID: -509153760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_4
+      rect:
+        serializedVersion: 2
+        x: 2221
+        y: 4410
+        width: 644
+        height: 564
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00b647d89922a54db19d6bcc0d4a643
+      internalID: 1231493987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_5
+      rect:
+        serializedVersion: 2
+        x: 2909
+        y: 3910
+        width: 701
+        height: 1059
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31007107bc280a40aababea652637d8
+      internalID: -490203694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_6
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 4323
+        width: 405
+        height: 642
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ed8c281f07e7444bbc9374ec602018
+      internalID: -248919579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_7
+      rect:
+        serializedVersion: 2
+        x: 4340
+        y: 4327
+        width: 317
+        height: 638
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9638ae8f0a31c15409c25b855d6eb8d9
+      internalID: 2115251512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_8
+      rect:
+        serializedVersion: 2
+        x: 4752
+        y: 4342
+        width: 166
+        height: 632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d5a551d1726a2347b67dabb1bcf8c89
+      internalID: -1499197670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_9
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 3900
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42119e1207e3bb749b03663cff6954b6
+      internalID: -2100876938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_10
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 3900
+        width: 517
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b74f52140f7154ebf93910837c3673
+      internalID: 2060277194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_11
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 3900
+        width: 517
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30dd92af79f07540ad5c133391471f0
+      internalID: 1918167647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_12
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 3900
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0f3594965e2cf44b3e3a96f9a117c9
+      internalID: -1329302915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_13
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 4020
+        width: 637
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75988dc125c937046bd15993548637d8
+      internalID: -1093853966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_14
+      rect:
+        serializedVersion: 2
+        x: 3705
+        y: 3619
+        width: 295
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4053dcc02ca5f3249b5c770bffd8bd5c
+      internalID: 2040895076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_15
+      rect:
+        serializedVersion: 2
+        x: 4140
+        y: 3619
+        width: 297
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817dbbc5691b7a040998011113e9a37b
+      internalID: -1952997953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_16
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 3361
+        width: 518
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58eb0b674872dc24290ff46fe5cac727
+      internalID: 623769897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_17
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 3363
+        width: 517
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a9ec7dbd5156046a692e8d59dcbde3
+      internalID: -1979232365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_18
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 3363
+        width: 517
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae999e818ef749a428c43b76accdfd67
+      internalID: 437447626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_19
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 3339
+        width: 518
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19ec45f20bf87f4983e06c16170cfc9
+      internalID: -145045294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_20
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 3397
+        width: 517
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6ee0320ebf14142825b017edcef64a
+      internalID: 674164943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_21
+      rect:
+        serializedVersion: 2
+        x: 4635
+        y: 3842
+        width: 283
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0845a63c77a9342be24cc58a776e38
+      internalID: -2079729146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_22
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 2494
+        width: 952
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a31b59065dee064488ee1f169c5133e
+      internalID: -610252380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_23
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 2494
+        width: 581
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e21f9a8f2d89d40ab88ccf872692a6
+      internalID: 947830657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_24
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 2455
+        width: 347
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e5cc77eae3e9c4ba5f63b39931e9c3
+      internalID: -601359956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_25
+      rect:
+        serializedVersion: 2
+        x: 2462
+        y: 2435
+        width: 41
+        height: 762
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b8e4caaab5b2b45aca7f8a70386625
+      internalID: 368143476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_26
+      rect:
+        serializedVersion: 2
+        x: 3029
+        y: 3016
+        width: 1833
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bd4962d23e859419dba4dc3673e589
+      internalID: 601006293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_27
+      rect:
+        serializedVersion: 2
+        x: 2936
+        y: 2633
+        width: 1963
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba9fbd59a588a948b118d1153e4bf6d
+      internalID: -1756485844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_28
+      rect:
+        serializedVersion: 2
+        x: 2868
+        y: 2242
+        width: 2065
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c62fc324541a224a9833b86f7f9daae
+      internalID: 757788173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_29
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1234
+        width: 808
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b38a343203f289428e27be227e9e6c2
+      internalID: 1938573701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_30
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1237
+        width: 808
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c2d621996413443baf576b9226b20f
+      internalID: 949485468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_31
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 1691
+        width: 42
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1384ad9118f51874a86d0a17a375d832
+      internalID: -910523852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_32
+      rect:
+        serializedVersion: 2
+        x: 2858
+        y: 1686
+        width: 1486
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c3852c27348804292ee00e06f0392e
+      internalID: -532619344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_33
+      rect:
+        serializedVersion: 2
+        x: 2284
+        y: 1078
+        width: 2634
+        height: 495
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf2779d4bb74f844b9589cc909c87ce
+      internalID: -1822579969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_34
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 45
+        width: 801
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efbd6ff4e2cffd044a464496fc670104
+      internalID: 800238035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_35
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 43
+        width: 800
+        height: 981
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a569027dec6ae746aa901e5ae456ce1
+      internalID: 1553466546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_36
+      rect:
+        serializedVersion: 2
+        x: 2692
+        y: 819
+        width: 39
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a527ce8028f1414489a8c5fd7933ce6
+      internalID: 877483677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_37
+      rect:
+        serializedVersion: 2
+        x: 4020
+        y: 504
+        width: 896
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c24e7f63ba7b74fb9133a50cbf041c
+      internalID: 2090209243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_38
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 743
+        width: 1574
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58459edc69322eb40b1665773f807a6d
+      internalID: 1035864684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_39
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 377
+        width: 295
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa7fef6d5ddc45439c1d76a6c94aaca
+      internalID: -653702234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_40
+      rect:
+        serializedVersion: 2
+        x: 2372
+        y: 621
+        width: 678
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c4004e51e0c164bbb7d182a1246dca
+      internalID: -1446462444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_41
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 377
+        width: 197
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496c5f7ee79115f4b9ac239db6e1a874
+      internalID: -331825922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_42
+      rect:
+        serializedVersion: 2
+        x: 3702
+        y: 641
+        width: 176
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ac0816626541e45be4b3f97569ba9b
+      internalID: -1840438139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_43
+      rect:
+        serializedVersion: 2
+        x: 2438
+        y: 504
+        width: 549
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc1e1490704630419dc2706f171e24b
+      internalID: 251213208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_44
+      rect:
+        serializedVersion: 2
+        x: 3685
+        y: 40
+        width: 266
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 747b75263f1da054e832837c2e75bd40
+      internalID: -1771151508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_45
+      rect:
+        serializedVersion: 2
+        x: 2301
+        y: 68
+        width: 183
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f4a978ce6ff5f408af5fbfbfaf0946
+      internalID: 1111938338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_46
+      rect:
+        serializedVersion: 2
+        x: 2623
+        y: 265
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5ee12bad730d143a2bbafe5bc1af16
+      internalID: -1282574524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_47
+      rect:
+        serializedVersion: 2
+        x: 2885
+        y: 143
+        width: 166
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac35d37a1c23f949a0ef4800358f7b5
+      internalID: -455384745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_48
+      rect:
+        serializedVersion: 2
+        x: 3204
+        y: 27
+        width: 296
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b6181660fd9e3f47b18e832dcca7546
+      internalID: 818725963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_49
+      rect:
+        serializedVersion: 2
+        x: 4205
+        y: 40
+        width: 711
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83eee433b7c4cdb42bc42961ff233425
+      internalID: -364284018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FixedStairs_50
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 49
+        width: 166
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c60ae64ad6cc8439a5272354f4f7a2
+      internalID: -1911600120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      FixedStairs_0: 55524245
+      FixedStairs_1: -1370375023
+      FixedStairs_10: 2060277194
+      FixedStairs_11: 1918167647
+      FixedStairs_12: -1329302915
+      FixedStairs_13: -1093853966
+      FixedStairs_14: 2040895076
+      FixedStairs_15: -1952997953
+      FixedStairs_16: 623769897
+      FixedStairs_17: -1979232365
+      FixedStairs_18: 437447626
+      FixedStairs_19: -145045294
+      FixedStairs_2: -1959618682
+      FixedStairs_20: 674164943
+      FixedStairs_21: -2079729146
+      FixedStairs_22: -610252380
+      FixedStairs_23: 947830657
+      FixedStairs_24: -601359956
+      FixedStairs_25: 368143476
+      FixedStairs_26: 601006293
+      FixedStairs_27: -1756485844
+      FixedStairs_28: 757788173
+      FixedStairs_29: 1938573701
+      FixedStairs_3: -509153760
+      FixedStairs_30: 949485468
+      FixedStairs_31: -910523852
+      FixedStairs_32: -532619344
+      FixedStairs_33: -1822579969
+      FixedStairs_34: 800238035
+      FixedStairs_35: 1553466546
+      FixedStairs_36: 877483677
+      FixedStairs_37: 2090209243
+      FixedStairs_38: 1035864684
+      FixedStairs_39: -653702234
+      FixedStairs_4: 1231493987
+      FixedStairs_40: -1446462444
+      FixedStairs_41: -331825922
+      FixedStairs_42: -1840438139
+      FixedStairs_43: 251213208
+      FixedStairs_44: -1771151508
+      FixedStairs_45: 1111938338
+      FixedStairs_46: -1282574524
+      FixedStairs_47: -455384745
+      FixedStairs_48: 818725963
+      FixedStairs_49: -364284018
+      FixedStairs_5: -490203694
+      FixedStairs_50: -1911600120
+      FixedStairs_6: -248919579
+      FixedStairs_7: 2115251512
+      FixedStairs_8: -1499197670
+      FixedStairs_9: -2100876938
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
