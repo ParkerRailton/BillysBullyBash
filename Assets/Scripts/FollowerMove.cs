@@ -125,6 +125,6 @@ public class FollowerMove : MonoBehaviour
         {
             state = FollowerState.JUMPING;
         }
-        anim.SetInteger("State", (int)state);
+        //anim.SetInteger("State", (int)state);
     }
 }
