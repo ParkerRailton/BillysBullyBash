@@ -44,6 +44,7 @@ public class CombatLoader : MonoBehaviour
 
     void loadCombat()
     {
+        Debug.Log("combat should load");
         CombatValues.enemies = enemies;
 
         SceneManager.LoadSceneAsync("CombatScene", LoadSceneMode.Additive);
