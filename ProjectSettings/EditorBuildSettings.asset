@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TestLoaderScene.unity
     guid: 57d9bf6307d93d54db646cfa53fb4edb
   - enabled: 1
-    path: Assets/Scenes/CombatScene.unity
-    guid: 5199700f8182b4541b901678a3522715
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9797a26831f2f95459b0bd7dee049664
   - enabled: 1
@@ -26,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lvl3WhiteBox.unity
     guid: 4860102a13cfdfd47b6e776ed6ccd219
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: f2fca6b1abf16bd48b408e9f015c2bdc
+  - enabled: 1
+    path: Assets/Scenes/CombatScene.unity
+    guid: 5199700f8182b4541b901678a3522715
   m_configObjects: {}
