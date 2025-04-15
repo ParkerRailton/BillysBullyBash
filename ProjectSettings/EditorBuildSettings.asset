@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9797a26831f2f95459b0bd7dee049664
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TutorialLevel.unity
     guid: 3f8be3e743c27d0489ad270dfb172b89
   - enabled: 1
     path: Assets/Scenes/level2.unity
     guid: d2629a825b33f6443b75cd76055fcb6b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lvl3WhiteBox.unity
     guid: 4860102a13cfdfd47b6e776ed6ccd219
   - enabled: 1
