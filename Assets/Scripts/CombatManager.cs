@@ -362,5 +362,6 @@ public class CombatManager : MonoBehaviour
         CombatValues.loadedFight = null;
         yield return StartCoroutine(Display("Billy lost the battle!"));
         SceneManager.UnloadSceneAsync("CombatScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
