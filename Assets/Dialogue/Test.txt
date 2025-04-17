@@ -1,0 +1,3 @@
+Billy;Hello. This is dialogue
+Voice of God;Please look at Test.txt to see how to make your own!
+Billy;WHO SAID THAT!?

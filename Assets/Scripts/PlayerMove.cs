@@ -12,7 +12,7 @@ public  enum PlayerState
 
 public class PlayerMove : MonoBehaviour
 {
-   
+    public bool playerFrozen = false;
 
     public float moveSpeed = 3.5f;
     public float jumpStrength = 20f;
@@ -42,7 +42,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         horizontalValue = Input.GetAxisRaw("Horizontal");
-        if (SceneManager.sceneCount == 1)
+        if (!playerFrozen)
         {
             Move(horizontalValue);
             if (Input.GetKeyDown(KeyCode.Space))
@@ -57,6 +57,10 @@ public class PlayerMove : MonoBehaviour
             {
                 footSteps.enabled = false;
             }
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
         DetermineState();
 

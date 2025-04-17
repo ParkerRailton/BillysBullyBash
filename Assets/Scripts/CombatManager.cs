@@ -184,6 +184,8 @@ public class CombatManager : MonoBehaviour
     
     private void Start()
     {
+        GameObject.Find("Player").GetComponent<PlayerMove>().playerFrozen = true;
+
         enemies = CombatValues.enemies ?? defaultEncounter;
         insults = CombatValues.insults;
         StartCoroutine(SetUpBattle());
@@ -350,7 +352,7 @@ public class CombatManager : MonoBehaviour
 
     IEnumerator Win()
     {
-        CombatValues.loadedFight.battleWon = true;
+        CombatValues.loadedFight.battleWon = false;
         CombatValues.loadedFight = null;
         yield return StartCoroutine(Display("Billy won the battle!"));
         SceneManager.UnloadSceneAsync("CombatScene");
@@ -358,7 +360,7 @@ public class CombatManager : MonoBehaviour
 
     IEnumerator Lose()
     {
-        
+        GameObject.Find("Player").GetComponent<PlayerMove>().playerFrozen = false;
         CombatValues.loadedFight = null;
         yield return StartCoroutine(Display("Billy lost the battle!"));
         SceneManager.UnloadSceneAsync("CombatScene");
